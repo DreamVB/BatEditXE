@@ -20,6 +20,7 @@ This is a small project I made in Lazarus to edit and create new batch files, Ba
 - Recent files lists
 - Asks for confirm before exiting the program if files are unsaved.
 - Test batch files with the debug menu without even saving
+- Autocomplete menu press crtl+space to see list of commands
 - And much more
 
 ## Screenshot
