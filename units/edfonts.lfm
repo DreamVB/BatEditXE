@@ -1,0 +1,113 @@
+object frmFonts: TfrmFonts
+  Left = 661
+  Height = 540
+  Top = 218
+  Width = 492
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Font and Background'
+  ClientHeight = 540
+  ClientWidth = 492
+  DesignTimePPI = 144
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object lstFonts: TListBox
+    Left = 24
+    Height = 220
+    Top = 80
+    Width = 352
+    ItemHeight = 0
+    OnClick = lstFontsClick
+    TabOrder = 0
+  end
+  object lblFonts: TLabel
+    Left = 24
+    Height = 25
+    Top = 10
+    Width = 117
+    Caption = 'Available fonts'
+    ParentColor = False
+  end
+  object lblFontSize: TLabel
+    Left = 384
+    Height = 25
+    Top = 10
+    Width = 72
+    Caption = 'Font Size'
+    ParentColor = False
+  end
+  object lstFontSize: TListBox
+    Left = 389
+    Height = 257
+    Top = 44
+    Width = 74
+    ItemHeight = 0
+    OnClick = lstFontSizeClick
+    TabOrder = 1
+  end
+  object lblBackground: TLabel
+    Left = 24
+    Height = 25
+    Top = 432
+    Width = 205
+    Caption = 'Editor Background Colour'
+    ParentColor = False
+  end
+  object cmdBackColor: TColorButton
+    Left = 240
+    Height = 38
+    Hint = 'Pick colour'
+    Top = 429
+    Width = 52
+    BorderWidth = 2
+    ButtonColorSize = 16
+    ButtonColor = clWhite
+    OnColorChanged = cmdBackColorColorChanged
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object cmdOK: TButton
+    Left = 224
+    Height = 38
+    Top = 480
+    Width = 113
+    Caption = 'OK'
+    OnClick = cmdOKClick
+    TabOrder = 2
+  end
+  object cmdClose: TButton
+    Left = 343
+    Height = 38
+    Top = 480
+    Width = 113
+    Caption = 'Close'
+    OnClick = cmdCloseClick
+    TabOrder = 3
+  end
+  object lblFonts1: TLabel
+    Left = 24
+    Height = 25
+    Top = 312
+    Width = 60
+    Caption = 'Preview'
+    ParentColor = False
+  end
+  object pPreview: TPanel
+    Left = 24
+    Height = 76
+    Top = 344
+    Width = 439
+    BevelInner = bvLowered
+    Caption = 'Preview'
+    TabOrder = 4
+  end
+  object txtFind: TEdit
+    Left = 24
+    Height = 33
+    Top = 40
+    Width = 352
+    OnChange = txtFindChange
+    TabOrder = 5
+  end
+end

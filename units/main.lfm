@@ -1,0 +1,681 @@
+object frmmain: Tfrmmain
+  Left = 614
+  Height = 465
+  Top = 243
+  Width = 822
+  AllowDropFiles = True
+  Caption = 'BatEditor XE'
+  ClientHeight = 435
+  ClientWidth = 822
+  DesignTimePPI = 144
+  Menu = mnuMain
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDropFiles = FormDropFiles
+  LCLVersion = '2.2.4.0'
+  object Page1: TPageControl
+    Left = 0
+    Height = 399
+    Top = 0
+    Width = 822
+    Align = alClient
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -20
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Images = imgIcons
+    ParentFont = False
+    PopupMenu = mnuTabs
+    TabOrder = 0
+    OnChange = Page1Change
+    OnMouseDown = Page1MouseDown
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 36
+    Top = 399
+    Width = 822
+    Panels = <    
+      item
+        Width = 50
+      end    
+      item
+        Width = 50
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object mnuMain: TMainMenu
+    Left = 248
+    Top = 80
+    object MenuItem1: TMenuItem
+      Caption = '&File'
+      object mnuNew: TMenuItem
+        Caption = 'New'
+        ShortCut = 16462
+        OnClick = mnuNewClick
+      end
+      object mnuNewWindow: TMenuItem
+        Caption = 'New Window'
+        OnClick = mnuNewWindowClick
+      end
+      object Separator8: TMenuItem
+        Caption = '-'
+      end
+      object mnuOpen: TMenuItem
+        Caption = 'Open'
+        ShortCut = 16463
+        OnClick = mnuOpenClick
+      end
+      object mnuSamples: TMenuItem
+        Caption = 'Open sample script'
+        OnClick = mnuSamplesClick
+      end
+      object mnuReload: TMenuItem
+        Caption = 'Reload file from disk'
+        OnClick = mnuReloadClick
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
+      end
+      object mnuSave: TMenuItem
+        Caption = 'Save'
+        ShortCut = 16467
+        OnClick = mnuSaveClick
+      end
+      object mnuSaveAs: TMenuItem
+        Caption = 'Save As'
+        ShortCut = 24659
+        OnClick = mnuSaveAsClick
+      end
+      object mnuSaveAll: TMenuItem
+        Caption = 'Save All'
+        OnClick = mnuSaveAllClick
+      end
+      object Separator2: TMenuItem
+        Caption = '-'
+      end
+      object mnuClose: TMenuItem
+        Caption = 'Close'
+        ShortCut = 16499
+        OnClick = mnuCloseClick
+      end
+      object mnuCloseAll: TMenuItem
+        Caption = 'Close All'
+        OnClick = mnuCloseAllClick
+      end
+      object Separator17: TMenuItem
+        Caption = '-'
+      end
+      object mnuReopen: TMenuItem
+        Caption = 'Recent'
+        OnClick = mnuReopenClick
+      end
+      object Separator3: TMenuItem
+        Caption = '-'
+      end
+      object mnuLoadLst: TMenuItem
+        Caption = 'Load a list of files'
+        OnClick = mnuLoadLstClick
+      end
+      object mnuSaveLst: TMenuItem
+        Caption = 'Save a list of files'
+        OnClick = mnuSaveLstClick
+      end
+      object Separator18: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem7: TMenuItem
+        Caption = 'Ex&it'
+        OnClick = MenuItem7Click
+      end
+    end
+    object mnuEdit: TMenuItem
+      Caption = '&Edit'
+      object mnuUndo: TMenuItem
+        Caption = 'Undo'
+        ShortCut = 16474
+        OnClick = mnuUndoClick
+      end
+      object mnuRedo: TMenuItem
+        Caption = 'Redo'
+        ShortCut = 24666
+        OnClick = mnuRedoClick
+      end
+      object Separator4: TMenuItem
+        Caption = '-'
+      end
+      object mnuCut: TMenuItem
+        Caption = 'Cut'
+        ShortCut = 16472
+        OnClick = mnuCutClick
+      end
+      object mnuCutAppend: TMenuItem
+        Caption = 'Cut Append'
+        ShortCut = 24664
+        OnClick = mnuCutAppendClick
+      end
+      object mnuCopy: TMenuItem
+        Caption = 'Copy'
+        ShortCut = 16451
+        OnClick = mnuCopyClick
+      end
+      object mnuCopyAppend: TMenuItem
+        Caption = 'Copy Append'
+        ShortCut = 24643
+        OnClick = mnuCopyAppendClick
+      end
+      object mnuPaste: TMenuItem
+        Caption = 'Paste'
+        ShortCut = 16470
+        OnClick = mnuPasteClick
+      end
+      object mnuDelete: TMenuItem
+        Caption = 'Delete'
+        ShortCut = 46
+        OnClick = mnuDeleteClick
+        object mnuDelSelection: TMenuItem
+          Caption = 'Selection'
+          OnClick = mnuDelSelectionClick
+        end
+        object mnuDelLine: TMenuItem
+          Caption = 'Line'
+          OnClick = mnuDelLineClick
+        end
+      end
+      object Separator5: TMenuItem
+        Caption = '-'
+      end
+      object mnuOpenGoogle: TMenuItem
+        Caption = 'Search Google...'
+        OnClick = mnuOpenGoogleClick
+      end
+      object mnuFind: TMenuItem
+        Caption = 'Find'
+        ShortCut = 16454
+        OnClick = mnuFindClick
+      end
+      object mnuFindNext: TMenuItem
+        Caption = 'Fnd Next'
+        ShortCut = 114
+        OnClick = mnuFindNextClick
+      end
+      object mnuFindPrevious: TMenuItem
+        Caption = 'Find Previous'
+        ShortCut = 8306
+        OnClick = mnuFindPreviousClick
+      end
+      object mnuReplace: TMenuItem
+        Caption = 'Replace'
+        ShortCut = 16456
+        OnClick = mnuReplaceClick
+      end
+      object mnuGotoLine: TMenuItem
+        Caption = 'Goto Line'
+        ShortCut = 16455
+        OnClick = mnuGotoLineClick
+      end
+      object Separator6: TMenuItem
+        Caption = '-'
+      end
+      object mnuSelectAll: TMenuItem
+        Caption = 'Select All'
+        ShortCut = 16449
+        OnClick = mnuSelectAllClick
+      end
+      object nuSelection: TMenuItem
+        Caption = 'Selection'
+        object mnuUpcase: TMenuItem
+          Caption = 'Uppercase'
+          OnClick = mnuUpcaseClick
+        end
+        object mnuLowcase: TMenuItem
+          Caption = 'Lowercase'
+          OnClick = mnuLowcaseClick
+        end
+        object mnuTitleCase: TMenuItem
+          Caption = 'Title Case'
+          OnClick = mnuTitleCaseClick
+        end
+      end
+      object Separator9: TMenuItem
+        Caption = '-'
+      end
+      object mnuDateTime: TMenuItem
+        Caption = 'Date and Time'
+        object mnuDate: TMenuItem
+          Caption = 'Date'
+          OnClick = mnuDateClick
+        end
+        object mnuLongDate: TMenuItem
+          Caption = 'Long Date'
+          OnClick = mnuLongDateClick
+        end
+        object mnuTime: TMenuItem
+          Caption = 'Time'
+          OnClick = mnuTimeClick
+        end
+        object mnuDateTime1: TMenuItem
+          Caption = 'Date and Time'
+          OnClick = mnuDateTime1Click
+        end
+        object Separator7: TMenuItem
+          Caption = '-'
+        end
+        object mnuCustom: TMenuItem
+          Caption = 'Custom'
+          OnClick = mnuCustomClick
+        end
+      end
+      object mnuInsertFile: TMenuItem
+        Caption = 'Insert File'
+        OnClick = mnuInsertFileClick
+      end
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Batch'
+      object mnuEchoOn: TMenuItem
+        Caption = 'Echo On [Show]'
+        OnClick = mnuEchoOnClick
+      end
+      object mnuEchoOff: TMenuItem
+        Caption = 'Echo Off [No Show]'
+        OnClick = mnuEchoOffClick
+      end
+      object Separator10: TMenuItem
+        Caption = '-'
+      end
+      object mnuShowMsg: TMenuItem
+        Caption = 'Echo'
+        OnClick = mnuShowMsgClick
+      end
+      object Separator21: TMenuItem
+        Caption = '-'
+      end
+      object mnuSetVar: TMenuItem
+        Caption = 'Set Variable'
+        OnClick = mnuSetVarClick
+      end
+      object SetVarExp: TMenuItem
+        Caption = 'Set Variable Expression'
+        OnClick = SetVarExpClick
+      end
+      object mnuShowVar: TMenuItem
+        Caption = 'Display Variable'
+        OnClick = mnuShowVarClick
+      end
+      object Separator19: TMenuItem
+        Caption = '-'
+      end
+      object mnuComment: TMenuItem
+        Caption = 'Comment'
+        OnClick = mnuCommentClick
+      end
+      object Separator22: TMenuItem
+        Caption = '-'
+      end
+      object mnuNewLabel: TMenuItem
+        Caption = 'New Label'
+        OnClick = mnuNewLabelClick
+      end
+      object mnuGotoLabel: TMenuItem
+        Caption = 'Goto Label'
+        OnClick = mnuGotoLabelClick
+      end
+      object Separator23: TMenuItem
+        Caption = '-'
+      end
+      object mnuBatOps: TMenuItem
+        Caption = 'Operators'
+        object mnuOp1: TMenuItem
+          Caption = 'Unary Operators'
+          object MnuOpA: TMenuItem
+            Caption = '~ (Tilde operator)'
+            OnClick = MnuOpAClick
+          end
+          object MnuOpB: TMenuItem
+            Caption = '! (Boolean NOT operator)'
+            OnClick = MnuOpBClick
+          end
+          object MnuOpC: TMenuItem
+            Caption = '– (unary minus operator)'
+            OnClick = MnuOpCClick
+          end
+        end
+        object mnuOp2: TMenuItem
+          Caption = 'Arithmetic Operators'
+          object mnuOpA1: TMenuItem
+            Caption = '+ (Addition operator)'
+            OnClick = mnuOpA1Click
+          end
+          object mnuOpA2: TMenuItem
+            Caption = '- (Subtraction operator)'
+            OnClick = mnuOpA2Click
+          end
+          object mnuOpA3: TMenuItem
+            Caption = '% (Modulus operator)'
+            OnClick = mnuOpA3Click
+          end
+          object mnuOpA4: TMenuItem
+            Caption = '/ (Division operator)'
+            OnClick = mnuOpA4Click
+          end
+          object mnuOpA5: TMenuItem
+            Caption = '* (Multiplication operator)'
+            OnClick = mnuOpA5Click
+          end
+        end
+        object mnuOp3: TMenuItem
+          Caption = 'Relational Operators'
+          object MnuOpR1: TMenuItem
+            Caption = 'EQU (equal to)'
+            OnClick = MnuOpR1Click
+          end
+          object MnuOpR2: TMenuItem
+            Caption = 'NEQ (not equal to)'
+            OnClick = MnuOpR2Click
+          end
+          object MnuOpR3: TMenuItem
+            Caption = 'LSS (less than)'
+            OnClick = MnuOpR3Click
+          end
+          object MnuOpR4: TMenuItem
+            Caption = 'LEQ (less than or equal to)'
+            OnClick = MnuOpR4Click
+          end
+          object MnuOpR5: TMenuItem
+            Caption = 'GTR (greater than)'
+            OnClick = MnuOpR5Click
+          end
+          object MnuOpR6: TMenuItem
+            Caption = 'GEQ (greater than or equal to)'
+            OnClick = MnuOpR6Click
+          end
+        end
+        object MnuOp4: TMenuItem
+          Caption = 'Logical shift and re directional Operators'
+          object mnuOpL1: TMenuItem
+            Caption = '>> (Logical shift operator)'
+            OnClick = mnuOpL1Click
+          end
+          object mnuOpL2: TMenuItem
+            Caption = '< Re directional operator in'
+            OnClick = mnuOpL2Click
+          end
+          object mnuOpL3: TMenuItem
+            Caption = '> (Re directional operator out)'
+            OnClick = mnuOpL3Click
+          end
+        end
+        object mnuOp5: TMenuItem
+          Caption = 'Bitwise Operators'
+          RadioItem = True
+          object MnuOPB1: TMenuItem
+            Caption = '&& (Bitwise and operator)'
+            OnClick = MnuOPB1Click
+          end
+          object MnuOPB2: TMenuItem
+            Caption = '| (Bitwise or operator)'
+            OnClick = MnuOPB2Click
+          end
+          object MnuOPB3: TMenuItem
+            Caption = '^ (Bitwise exclusive or operator)'
+            OnClick = MnuOPB3Click
+          end
+        end
+      end
+    end
+    object mnuEnv: TMenuItem
+      Caption = 'ENV'
+    end
+    object mnuDebug: TMenuItem
+      Caption = 'Debug'
+      object mnuRun: TMenuItem
+        Caption = 'Run'
+        ShortCut = 116
+        OnClick = mnuRunClick
+      end
+    end
+    object mnuView: TMenuItem
+      Caption = '&View'
+      object chkStatuabar: TMenuItem
+        Caption = 'Status bar'
+        Checked = True
+        OnClick = chkStatuabarClick
+      end
+      object mnuViewGutter: TMenuItem
+        Caption = 'Editor Gutter'
+        Checked = True
+        OnClick = mnuViewGutterClick
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Options'
+      object mnuAutoIndent: TMenuItem
+        Caption = 'Auto Indent'
+        OnClick = mnuAutoIndentClick
+      end
+      object mnuShowSpecialChars: TMenuItem
+        Caption = 'Show special chars'
+        OnClick = mnuShowSpecialCharsClick
+      end
+      object Separator16: TMenuItem
+        Caption = '-'
+      end
+      object mnuFontBk: TMenuItem
+        Caption = 'Font and Background'
+        OnClick = mnuFontBkClick
+      end
+    end
+    object mnuHelp: TMenuItem
+      Caption = '&Help'
+      object mnuHelp1: TMenuItem
+        Caption = 'Online Batch Script Tutorial'
+        OnClick = mnuHelp1Click
+      end
+      object mnuHelp2: TMenuItem
+        Caption = 'Online Batch file – Programming tutorial'
+        OnClick = mnuHelp2Click
+      end
+      object Separator20: TMenuItem
+        Caption = '-'
+      end
+      object mnuAbout: TMenuItem
+        Caption = '#0'
+        OnClick = mnuAboutClick
+      end
+    end
+  end
+  object SynBat: TSynBatSyn
+    DefaultFilter = 'MS-DOS Batch Files (*.bat;*.cmd)|*.bat;*.cmd'
+    Enabled = False
+    CommentAttri.Foreground = 16744576
+    CommentAttri.Style = [fsBold, fsItalic]
+    IdentifierAttri.Foreground = 4194368
+    KeyAttri.Foreground = 4227327
+    NumberAttri.Foreground = clRed
+    Left = 184
+    Top = 80
+  end
+  object imgIcons: TImageList
+    Height = 24
+    Width = 24
+    Left = 312
+    Top = 80
+    Bitmap = {
+      4C7A010000001800000018000000B00100000000000078DAEDD5D94B02511406
+      F0FEF91ED2DE7A28A5CD1697526C538A249D490CB56891162D4B734DDB4067D4
+      51F8BAE7869036CDDCC0DE3A70B930177E73E6BB07666CECBFCC6A72621C7FB1
+      46E5C7A2B2EEFED5D7346D24ABD3E9F025E2DF666E10DA0BE0F5E599EFF9DC83
+      90DD6EB785FC59DB14A20741BE4BA11DF8BD6E21DBCCA73EC972CCCFA09ABF42
+      397789E27D0A8EB969FE2EFA2E23DBCCA72C62D22E6A8534021B6E2C2FD8B1ED
+      77A190BD40647F8B9F1BD9AD56CBD0A7BCA9CF7A31CD6D7A467B319BE2CFE9DC
+      C836F3A9BF23D67FBD944170D3C3ED1DD63F652485B6B1CFCE8D6C55550D7DCA
+      97FA5C62F9D7D8373C3DDEA0C2EE81F2F77B5DF0B85DB05AAD906559D736F3FB
+      8BEE98EE81CF51F8738E7C6B2B28671378291CA39891B1BC68FB662B8A22E4D3
+      1CF5E79F32F1AE7B507938454F6BC1E974A2DB51504887914824066C517F7806
+      2993F7EA35B7A9687F2D9DC062B10CD8CD66F3577EFF2E93C924AAB973F4BA9F
+      FDF73495657488783C3E60FFC61F9E13DFDA2ACBE80C6FE514CA777196BFFD9B
+      DD683484FC9F665092249E492412D1B5457CB3F91ECEFBABADE7FFE5FFE5BF7E
+      AE0F22224F97
+    }
+  end
+  object FindDialog: TFindDialog
+    OnFind = DoFind
+    Left = 120
+    Top = 80
+  end
+  object ReplaceDialog: TReplaceDialog
+    Options = [frDown, frReplace, frReplaceAll, frHidePromptOnReplace]
+    OnFind = DoFind
+    OnReplace = DoReplace
+    Left = 48
+    Top = 80
+  end
+  object mnuEditor: TPopupMenu
+    Left = 376
+    Top = 80
+    object mnuUndo1: TMenuItem
+      Caption = 'Undo'
+      OnClick = mnuUndo1Click
+    end
+    object mnuRedo1: TMenuItem
+      Caption = 'Redo'
+      OnClick = mnuRedo1Click
+    end
+    object Separator11: TMenuItem
+      Caption = '-'
+    end
+    object mnuCut1: TMenuItem
+      Caption = 'Cut'
+      OnClick = mnuCut1Click
+    end
+    object mnyCopy1: TMenuItem
+      Caption = 'Copy'
+      OnClick = mnyCopy1Click
+    end
+    object mnuPaste1: TMenuItem
+      Caption = 'Paste'
+      OnClick = mnuPaste1Click
+    end
+    object Separator12: TMenuItem
+      Caption = '-'
+    end
+    object mnuSelectAll1: TMenuItem
+      Caption = 'Select All'
+      OnClick = mnuSelectAll1Click
+    end
+    object mnuInsertFile1: TMenuItem
+      Caption = 'Insert File'
+      OnClick = mnuInsertFile1Click
+    end
+    object Separator13: TMenuItem
+      Caption = '-'
+    end
+    object mnuFindGoogle1: TMenuItem
+      Caption = 'Search in Google'
+      OnClick = mnuFindGoogle1Click
+    end
+  end
+  object mnuTabs: TPopupMenu
+    Left = 432
+    Top = 80
+    object mnuNew1: TMenuItem
+      Caption = 'New'
+      OnClick = mnuNew1Click
+    end
+    object mnuOpen1: TMenuItem
+      Caption = 'Open'
+      OnClick = mnuOpen1Click
+    end
+    object mnuOpenPath: TMenuItem
+      Caption = 'Open File Path'
+      OnClick = mnuOpenPathClick
+    end
+    object Separator14: TMenuItem
+      Caption = '-'
+    end
+    object mnuSave1: TMenuItem
+      Caption = 'Save'
+      OnClick = mnuSave1Click
+    end
+    object mnuSaveAs1: TMenuItem
+      Caption = 'Save As'
+      OnClick = mnuSaveAs1Click
+    end
+    object Separator15: TMenuItem
+      Caption = '-'
+    end
+    object mnuClose1: TMenuItem
+      Caption = 'Close'
+      OnClick = mnuClose1Click
+    end
+  end
+  object ComSynBat: TSynCompletion
+    ItemList.Strings = (
+      'ASSOC'
+      'ATTRIB'
+      'CD'
+      'CHKDSK'
+      'CHOICE'
+      'CLS'
+      'CMD'
+      'COMP'
+      'CONVERT'
+      'COPY'
+      'DATE'
+      'DEL'
+      'DIR'
+      'DISKPART'
+      'DRIVERQUERY'
+      'ECHO'
+      'EXIT'
+      'EXPAND'
+      'FC'
+      'FIND'
+      'FORMAT'
+      'HELP'
+      'IPCONFIG'
+      'LABEL'
+      'MD'
+      'MORE'
+      'MOVE'
+      'NET'
+      'PAUSE'
+      'PING'
+      'RD'
+      'REM'
+      'REN'
+      'SET'
+      'SHUTDOWN'
+      'SORT'
+      'START'
+      'SYSTEMINFO'
+      'TASKKILL'
+      'TASKLIST'
+      'TIME'
+      'TITLE'
+      'TREE'
+      'TYPE'
+      'VER'
+      'VOL'
+      'XCOPY'
+    )
+    Position = 0
+    LinesInWindow = 8
+    SelectedColor = clHighlight
+    CaseSensitive = False
+    Width = 262
+    ShowSizeDrag = True
+    AutoUseSingleIdent = True
+    ShortCut = 16416
+    EndOfTokenChr = '()[].'
+    OnCodeCompletion = ComSynBatCodeCompletion
+    ExecCommandID = ecSynCompletionExecute
+    ToggleReplaceWhole = False
+    Left = 496
+    Top = 80
+  end
+end
